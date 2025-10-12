@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: flask-app-monitor
+  namespace: default  # Namespace onde o Prometheus está instalado
+spec:
+  selector:
+    matchLabels:
+      app: flask-app  # Label do seu serviço Flask
+  endpoints:
+  - port: http  # Nome da porta exposta no seu serviço
+    path: /metrics
+    interval: 30s  # Intervalo de raspagem
