@@ -16,9 +16,18 @@ This is a simple Flask application that exposes Prometheus metrics and has three
 - Docker (for containerization)
 
 ## Project Structure
+```bash
 my_flask_app/
 │
 ├── app.py
 ├── Dockerfile
 └── requirements.txt
+```
 
+## minikube local
+```bash
+minikube start
+eval $(minikube docker-env)
+docker build -t my-flask-app .
+kubectl appy -f /k8s
+```

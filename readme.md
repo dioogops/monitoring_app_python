@@ -19,11 +19,11 @@ helm repo update
 
 kubectl create namespace monitoring
 
-helm install kube-prometheus-stack prometheus-community/
-
-kube-prometheus-stack --namespace monitoring
+helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack --namespace monitoring
 
 Se der erro:
-helm upgrade kube-prometheus-stack --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false kube-prometheus-stack/kube-prometheus-stack --namespace monitoring
+helm upgrade kube-prometheus-stack \
+--set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues=false \ 
+kube-prometheus-stackkube-prometheus-stack --namespace monitoring
 
 ```
