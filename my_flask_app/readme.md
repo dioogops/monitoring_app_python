@@ -29,5 +29,5 @@ my_flask_app/
 minikube start
 eval $(minikube docker-env)
 docker build -t my-flask-app .
-kubectl apply -f /k8s
+kubectl apply -f k8s
 ```
