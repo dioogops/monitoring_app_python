@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: flask-app-monitor
-  namespace: default  # Namespace onde o Prometheus está instalado
+  namespace: monitoring  # Namespace onde o Prometheus está instalado
 spec:
   selector:
     matchLabels:
